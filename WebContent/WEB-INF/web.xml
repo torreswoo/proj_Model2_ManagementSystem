@@ -2,16 +2,24 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>test_Model2_ManagementSystem</display-name>
   
+	<!-- 서블릿 설정  -->
+	<servlet>
+	  <servlet-name>JoinServlet</servlet-name>
+	  <servlet-class>com.skplanet.controller.JoinServlet</servlet-class>
+  	</servlet>
   
-  <servlet>
-  	<servlet-name>JoinServlet</servlet-name>
-  	<servlet-class>com.skplanet.controller.JoinServlet</servlet-class>
-  </servlet>
+	<servlet-mapping>
+	  <servlet-name>JoinServlet</servlet-name>
+	  <url-pattern>/join.do</url-pattern>
+	</servlet-mapping>
   
-  <servlet-mapping>
-  	<servlet-name>JoinServlet</servlet-name>
-  	<url-pattern>/join.do</url-pattern>
-  </servlet-mapping>
+  	<!-- DBCP설정  -->
+  	<resource-ref>
+      <description>DB Connection</description>
+      <res-ref-name>jdbc/test</res-ref-name>
+      <res-type>javax.sql.DataSource</res-type>
+      <res-auth>Container</res-auth>
+	</resource-ref>
   
   
   <welcome-file-list>

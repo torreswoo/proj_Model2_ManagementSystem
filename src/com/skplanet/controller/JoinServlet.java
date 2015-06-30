@@ -40,10 +40,11 @@ public class JoinServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		String id = request.getParameter("id");
 		String email= request.getParameter("email");
-		String phone = request.getParameter("phone");
+		String phone = request.getParameter("pw");
 		
 		
 		// insert Member to DB
+		
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/login.jsp");
 		dispatcher.forward(request, response);

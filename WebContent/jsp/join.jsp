@@ -29,7 +29,7 @@
 		</tr>
 		<tr>
 			<td>phone</td>
-			<td><input type="text" name="phone"></td>
+			<td><input type="text" name="pw"></td>
 		</tr>
 	</table>
 	
