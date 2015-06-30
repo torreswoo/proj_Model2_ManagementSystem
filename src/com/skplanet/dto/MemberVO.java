@@ -2,6 +2,13 @@ package com.skplanet.dto;
 
 public class MemberVO {
 
+	public MemberVO(String name, String id, String email, String pw) {
+		super();
+		this.name = name;
+		this.id = id;
+		this.email = email;
+		this.pw = pw;
+	}
 	private String name;
 	private String id;
 	private String email;

@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.skplanet.dao.MemberDAO;
+import com.skplanet.dto.MemberVO;
+
 /**
  * Servlet implementation class JoinServlet
  */
@@ -40,11 +43,15 @@ public class JoinServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		String id = request.getParameter("id");
 		String email= request.getParameter("email");
-		String phone = request.getParameter("pw");
+		String pw = request.getParameter("pw");
 		
-		
+		MemberVO member = new MemberVO(name, id, email, pw);
+		MemberDAO dao = MemberDAO.getInstance();
+
 		// insert Member to DB
-		
+		if ( dao.checkMember(member) == -1 ){ // insert가
+			dao.insertMember(member); // insert
+		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/login.jsp");
 		dispatcher.forward(request, response);
