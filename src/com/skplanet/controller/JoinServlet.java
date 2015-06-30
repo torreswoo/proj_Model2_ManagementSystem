@@ -49,7 +49,7 @@ public class JoinServlet extends HttpServlet {
 		MemberDAO dao = MemberDAO.getInstance();
 
 		// insert Member to DB
-		if ( dao.checkMember(member) == -1 ){ // insert가
+		if ( dao.checkMember(member) == -1 ){ // insert가능 
 			dao.insertMember(member); // insert
 		}
 		
