@@ -9,3 +9,6 @@
 	- servlet : HttpSession session = request.getSession() / session.setAttribute()
 	- jsp : <%=session.getAttribute("message") %>
 	
+- EL/JSTL 
+	- EL : ${} page, request, session, application
+	- JSTL : <c:if test="조건식">~</c:if>

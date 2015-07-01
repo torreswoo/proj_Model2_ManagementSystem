@@ -57,7 +57,7 @@ public class MemberDAO {
 					e.printStackTrace();
 				}
 			}
-			result = -1;// session test를 위해 join.jsp->JoinServlet.java->join.jsp
+		//	result = -1;// session test를 위해 join.jsp->JoinServlet.java->join.jsp
 			return result;
 		}
 	
