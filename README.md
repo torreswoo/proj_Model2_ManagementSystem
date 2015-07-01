@@ -6,3 +6,6 @@
 - DBCP설정 : 1. tomcat server.xml , 2. web.xml, 3.사용: Java/JSP
 - JDBC프로그래밍 
 - Session처리 
+	- servlet : HttpSession session = request.getSession() / session.setAttribute()
+	- jsp : <%=session.getAttribute("message") %>
+	

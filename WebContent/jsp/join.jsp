@@ -14,7 +14,7 @@
 <h3>register member</h3>
 
 <%
-	 
+	
 	if( request.getParameter("register") !=null){
 		String register = request.getParameter("register");
 		if(register.equals("fail")){
