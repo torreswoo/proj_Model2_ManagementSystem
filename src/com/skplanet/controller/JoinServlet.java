@@ -4,10 +4,10 @@ import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.skplanet.dao.MemberDAO;
 import com.skplanet.dto.MemberVO;
@@ -48,10 +48,14 @@ public class JoinServlet extends HttpServlet {
 		MemberVO member = new MemberVO(name, id, email, pw);
 		MemberDAO dao = MemberDAO.getInstance();
 
-		// insert Member to DB
-		if ( dao.checkMember(member) == -1 ){ // insert가능 
-			dao.insertMember(member); // insert
+		int result = dao.insertMember(member); // insert Member to DB
+		HttpSession session = request.getSession();
+		
+		if (result == 1 ){ // insert가능 
+			 // insert
 		}
+		
+		
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/login.jsp");
 		dispatcher.forward(request, response);
