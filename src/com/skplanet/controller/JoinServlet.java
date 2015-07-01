@@ -62,7 +62,7 @@ public class JoinServlet extends HttpServlet {
 			session.setAttribute("message", "회원가입을 실패하였습니다");
 			
 			//redirect
-			response.sendRedirect("./jsp/join.jsp?register=fail");// why? ./jsp...로해야하는지..
+			response.sendRedirect("./jsp/join.jsp?register=-1");// why? ./jsp...로해야하는지..
 		}
 		
 		
