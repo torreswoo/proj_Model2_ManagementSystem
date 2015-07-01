@@ -9,6 +9,9 @@
 <body>
 
 <h3>login! </h3>
+<%=session.getAttribute("message") %>
+<%=session.getAttribute("userid") %>님 로그인을 다시해 주세요</br>
+
 
 
 </body>

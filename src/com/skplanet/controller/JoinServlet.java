@@ -48,17 +48,24 @@ public class JoinServlet extends HttpServlet {
 		MemberVO member = new MemberVO(name, id, email, pw);
 		MemberDAO dao = MemberDAO.getInstance();
 
-		int result = dao.insertMember(member); // insert Member to DB
-		HttpSession session = request.getSession();
-		
+		int result = dao.insertMember(member); // [DAO]insert Member to DB
+		HttpSession session = request.getSession(); //[SESSION] HttpSession
 		if (result == 1 ){ // insert가능 
-			 // insert
+			session.setAttribute("userid", id);
+			session.setAttribute("message", "회원가입을 성공하였습니다");
+			
+			//forward
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/login.jsp");
+			dispatcher.forward(request, response);
+		}
+		else{
+			session.setAttribute("message", "회원가입을 실패하였습니다");
+			
+			//redirect
+			response.sendRedirect("./jsp/join.jsp?register=fail");// why? ./jsp...로해야하는지..
 		}
 		
 		
-		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/login.jsp");
-		dispatcher.forward(request, response);
 		
 		
 	}

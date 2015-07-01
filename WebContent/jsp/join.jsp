@@ -13,6 +13,17 @@
 
 <h3>register member</h3>
 
+<%
+	 
+	if( request.getParameter("register") !=null){
+		String register = request.getParameter("register");
+		if(register.equals("fail")){
+			out.println("<h5>register fail! try it again!</h5>");
+		}
+	}
+	
+%>
+
 <form name="joinForm" method="post" action="../join.do"> <!-- 여기성 주의해야할게 why? "../join.do"? -->
 	<table>
 		<tr>
