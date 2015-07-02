@@ -25,4 +25,6 @@
 - 1. Login기능 (index.jsp -> LoginServlet -> login.jsp)
 - 2. Join기능  JoinServlet
 - 3. Update기능 UpdateServlet 
-	
+
+- * 로그수집 
+- * Tomcat/etc 모니터링
