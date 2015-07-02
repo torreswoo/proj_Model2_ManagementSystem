@@ -10,6 +10,23 @@
 
 <h3>login! </h3>
 
+<form name="loginForm" method="post" action="/login.do">
+	<tr>
+		<td>id</td>
+		<td><input type="text" name="id"></td>
+	</tr>
+	<tr>
+		<td>pwd</td>
+		<td><input type="text" name="pwd"></td>
+	</tr>
+	<input type="submit" value="로그인" onclick="">
+	<input type="reset" value="취소" >
+	<input type="button" value="회원가입" onclick="location.href='./join.do'" >
+
+
+</form>
+
+
 
 </body>
 </html>
