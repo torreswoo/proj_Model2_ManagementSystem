@@ -8,7 +8,10 @@
 </head>
 <body>
 
-<h3>login! </h3>
+
+<%=session.getAttribute("message") %>
+<%=session.getAttribute("userid") %>님 here is main page</br>
+
 
 
 </body>

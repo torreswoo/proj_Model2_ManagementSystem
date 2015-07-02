@@ -55,7 +55,7 @@ public class JoinServlet extends HttpServlet {
 			session.setAttribute("message", "회원가입을 성공하였습니다");
 			
 			//forward
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/login.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/main.jsp");
 			dispatcher.forward(request, response);
 		}
 		else{
