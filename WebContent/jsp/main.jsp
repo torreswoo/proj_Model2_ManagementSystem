@@ -9,7 +9,7 @@
 <body>
 
 
-<%=session.getAttribute("message") %>
+<%=session.getAttribute("message") %></br>
 <%=session.getAttribute("userid") %>님 here is main page</br>
 
 

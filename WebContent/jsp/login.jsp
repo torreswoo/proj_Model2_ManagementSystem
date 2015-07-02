@@ -21,7 +21,9 @@
 	</tr>
 	<input type="submit" value="로그인" onclick="">
 	<input type="reset" value="취소" >
-	<input type="button" value="회원가입" onclick="location.href='./join.do'" >
+	
+	<!-- 상당히고민한부분 -->
+	<input type="button" value="회원가입" onclick="location.href='./join.do'" > 
 
 
 </form>
