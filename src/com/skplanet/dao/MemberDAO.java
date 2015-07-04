@@ -27,38 +27,71 @@ public class MemberDAO {
 		Connection conn = ds.getConnection();
 		return conn;
 	}
-	
 
-	
-	// 회원정보를 DB에 추가하기위한 메소드 
+	// join.do 회원정보를 DB에 추가하기위한 메소드 
 	public int insertMember(MemberVO mVo) {
-			int result = -1;
-			String sql = "insert into member values(?, ?, ?, ?)";
-			Connection conn = null;
-			PreparedStatement pstmt = null;
+		int result = -1;
+		String sql = "insert into member values(?, ?, ?, ?)";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, mVo.getName());
+			pstmt.setString(2, mVo.getId());
+			pstmt.setString(3, mVo.getPw());
+			pstmt.setString(4, mVo.getEmail());
+			
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
 			try {
-				conn = getConnection();
-				pstmt = conn.prepareStatement(sql);
-				pstmt.setString(1, mVo.getName());
-				pstmt.setString(2, mVo.getId());
-				pstmt.setString(3, mVo.getPw());
-				pstmt.setString(4, mVo.getEmail());
-				
-				result = pstmt.executeUpdate();
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
 			} catch (Exception e) {
 				e.printStackTrace();
-			} finally {
-				try {
-					if (pstmt != null)
-						pstmt.close();
-					if (conn != null)
-						conn.close();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
 			}
-		//	result = -1;// session test를 위해 join.jsp->JoinServlet.java->join.jsp
-			return result;
 		}
+		//	result = -1;// session test를 위해 join.jsp->JoinServlet.java->join.jsp
+		return result;
+	}
 	
+	// idCheck.do : id중복을 DB에서 체
+	public int idCheck(String userid){
+		int result = -1;
+		String sql = "select userid from member where userid=?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, userid);
+			
+			rs = pstmt.executeQuery();
+			if(rs.next()){
+				result = 1; // 중복된 id가존재 
+			}
+			else{
+				result = -1;// 중복된 id가 없다 
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null)	pstmt.close();
+				if (conn != null)	conn.close();
+				if (rs != null)	rs.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
 }
