@@ -25,8 +25,10 @@ function idCheck(){
 	}
 	
 	//
-	var url = "../idCheck.do?userid="+ userid;
+	var url = "../idCheck.do?userid="+ userid.value; 
 	window.open(url, "ID중복을 체크합니다.", "toolbar=yes, menubar=yes, resizable=yes, width=450, height=200");
+	
+	
 	
 	return true;
 	
