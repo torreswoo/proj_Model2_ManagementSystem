@@ -7,6 +7,16 @@ function joinCheck(){
 		name.focus();
 		return false;
 	}
+	
+	
+	var reid = document.joinForm.reid;
+	if (reid.value.length == 0) {
+		alert("아이디 중복체크를 해주세요! ");
+		reid.focus();
+		return false;
+	}
+	
+	
 	return true;
 }
 
@@ -28,8 +38,12 @@ function idCheck(){
 	var url = "../idCheck.do?userid="+ userid.value; 
 	window.open(url, "ID중복을 체크합니다.", "toolbar=yes, menubar=yes, resizable=yes, width=450, height=200");
 	
-	
-	
 	return true;
 	
+}
+// id 중복체크후에 사
+function idOk(){
+	opener.frm.userid.value  = "${userid}";
+	opener.frm.reid.value  = "${userid}";
+	self.close();	
 }

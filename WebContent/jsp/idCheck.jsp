@@ -29,7 +29,7 @@
 <!-- 중복인 아이디가 아닐때! -->
 <c:if test="${result==-1 }">
 	${userid}은 사용가능 아이디입니다.</br>
-	
+	<input type="button" value="사용" class="cancel" onclick="idOk()">	
 </c:if>
 
 </body>
