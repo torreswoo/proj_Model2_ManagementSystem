@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 import com.skplanet.dao.MemberDAO;
 
 /**
@@ -16,6 +18,8 @@ import com.skplanet.dao.MemberDAO;
  */
 @WebServlet("/IdCheckServlet")
 public class IdCheckServlet extends HttpServlet {
+	
+	private final Logger logger = Logger.getLogger(IdCheckServlet .class);
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -23,13 +27,27 @@ public class IdCheckServlet extends HttpServlet {
      */
     public IdCheckServlet() {
         super();
-        // TODO Auto-generated constructor stub
+        
+
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String parameter = request.getParameter("userid");
+		if(logger.isDebugEnabled()){
+			logger.debug("This is debug : " + parameter);
+		} 
+		if(logger.isInfoEnabled()){
+			logger.info("This is info : " + parameter);
+		}
+ 
+		logger.warn("This is warn : " + parameter);
+		logger.error("This is error : " + parameter);
+		logger.fatal("This is fatal : " + parameter);
+		
 		String userid = null;
 		int result = 0;
 		MemberDAO dao = MemberDAO.getInstance();
