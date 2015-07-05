@@ -41,7 +41,7 @@
 			<td>id</td>
 			<td>
 				<input type="text" name="userid">
-				<input type="hidden" name="id_check"> <!-- id체크를 한지를 체크 -->
+				<input type="hidden" name="reid"> <!-- id체크를 한지를 체크 -->
 				<input type="button" value="중복체크" onclick="idCheck()"> <!-- 일단 js로 넘긴다. -->
 			</td>
 		</tr>

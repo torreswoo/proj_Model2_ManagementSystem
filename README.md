@@ -17,9 +17,10 @@
 
 
 	
-	// 2015/07/04 issue
+	// 2015/07/05 issue
 	// 1. 회원가입후에는 login을 넘어서 바로 main로가야하는것 아닌가?
 	// 2. DTO에서 admin/member를 나누는 field추가 
+	// 3. 아이디를 사용한다고 누르면 EL-> js로 userid정보가 넘어와야하는
 	
 # 계발기능 
 - 1. Login기능 (index.jsp -> LoginServlet -> login.jsp)

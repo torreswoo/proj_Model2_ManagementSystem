@@ -41,9 +41,10 @@ function idCheck(){
 	return true;
 	
 }
-// id 중복체크후에 사
+// id 중복체크후에 사용 
 function idOk(){
-	opener.frm.userid.value  = "${userid}";
-	opener.frm.reid.value  = "${userid}";
-	self.close();	
+	opener.joinForm.userid.value  =  "${userid}"  // "${useable_userid}";
+	opener.joinForm.reid.value  =   "${userid}" // "${useable_userid}";
+	self.close();  //window.close();	
+	
 }
