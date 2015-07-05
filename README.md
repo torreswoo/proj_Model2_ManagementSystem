@@ -14,17 +14,20 @@
 - EL/JSTL 
 	- EL : ${} page, request, session, application
 	- JSTL : <c:if test="조건식">~</c:if>
+
+
 	
-	
-	// 2015/07/01 issue
-	// 1. js에서 id중복등을 체크해야하는가?
-	// 2. 회원가입후에는 login을 넘어서 바로 main로가야하는것 아닌가?
-	// 3. DTO에서 admin/member를 나누는 field추가 
+	// 2015/07/04 issue
+	// 1. 회원가입후에는 login을 넘어서 바로 main로가야하는것 아닌가?
+	// 2. DTO에서 admin/member를 나누는 field추가 
 	
 # 계발기능 
 - 1. Login기능 (index.jsp -> LoginServlet -> login.jsp)
 - 2. Join기능  JoinServlet
 - 3. Update기능 UpdateServlet 
+- 4. id중복체크기능 추가!
+- 5. Logging Framework (log4j)
+
 
 - * 로그수집 
 - * Tomcat/etc 모니터링
