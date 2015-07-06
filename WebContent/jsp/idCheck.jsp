@@ -17,7 +17,7 @@
 	<input type="text" name="userid">	
 	<input type="submit" value="중복체크"><br>
 	
-	<c:if test="${result ==1}">
+	<c:if test="${result == 1}">
 		${userid}은 이미 사용중인 아이디입니다.</br>		
 		<!-- 부모의 입력부분의 아이디를 지운다. -->
 		<script type="text/javascript">
@@ -26,11 +26,10 @@
 	</c:if>
 	
 	<!-- 중복인 아이디가 아닐때! -->
-	<c:if test="${result==-1 }">
+	<c:if test="${result == -1 }">
 		${userid}은 사용가능 아이디입니다.</br>
 		<%-- <c:set var="userid" value="${userid}" /> --%>
 		<input type="button" value="사용" class="cancel" onclick="idOk()">
-			
 	</c:if>
 </form>
 

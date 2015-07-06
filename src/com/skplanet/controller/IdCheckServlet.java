@@ -19,7 +19,10 @@ import com.skplanet.dao.MemberDAO;
 @WebServlet("/IdCheckServlet")
 public class IdCheckServlet extends HttpServlet {
 	
+	/* Logging :Log4j*/
 	private final Logger logger = Logger.getLogger(IdCheckServlet .class);
+	
+	/**/
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -43,7 +46,6 @@ public class IdCheckServlet extends HttpServlet {
 		if(logger.isInfoEnabled()){
 			logger.info("This is info : " + parameter);
 		}
- 
 		logger.warn("This is warn : " + parameter);
 		logger.error("This is error : " + parameter);
 		logger.fatal("This is fatal : " + parameter);

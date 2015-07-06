@@ -46,8 +46,9 @@ public class JoinServlet extends HttpServlet {
 		String id = request.getParameter("id");
 		String email= request.getParameter("email");
 		String pw = request.getParameter("pw");
+		String admin = request.getParameter("admin");
 		
-		MemberVO member = new MemberVO(name, id, email, pw);
+		MemberVO member = new MemberVO(name, id, email, pw, admin);
 		MemberDAO dao = MemberDAO.getInstance();
 
 		int result = dao.insertMember(member); // [DAO]insert Member to DB

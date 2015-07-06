@@ -94,4 +94,76 @@ public class MemberDAO {
 		}
 		return result;
 	}
+	public int LoginMember(String id, String pw) {
+		int result = 0;
+		String sql = "select pwd from member where userid=?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if(rs.next()){
+				String pwd = rs.getString("pwd");
+				if (pwd.equals(pw)){
+					result = 1;// 성공 
+				}
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null)	pstmt.close();
+				if (conn != null)	conn.close();
+				if (rs != null)	rs.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return result;
+	}
+	
+	public MemberVO getMember(String id){
+		MemberVO member=new MemberVO();
+		String sql = "select * from member where userid=?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			
+			rs = pstmt.executeQuery();
+			if(rs.next()){
+				String userid = id;
+				String name = rs.getString("name");
+				String pwd = rs.getString("pwd");
+				String email = rs.getString("email");
+				String admin = rs.getString("admin");
+				member.getMemberVO(name, userid, email, pwd, admin);
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null)	pstmt.close();
+				if (conn != null)	conn.close();
+				if (rs != null)	rs.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return member;
+		
+	}
 }

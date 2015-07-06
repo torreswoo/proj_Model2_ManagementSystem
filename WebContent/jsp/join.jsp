@@ -53,6 +53,13 @@
 			<td>phone</td>
 			<td><input type="text" name="pw"></td>
 		</tr>
+		<tr>
+			<td>admin</td>
+			<td>
+				<input type="radio" name="admin" value="admin">
+				<input type="radio" name="admin" value="member">
+			</td>
+		</tr>
 	</table>
 	
 	<input type="submit" value="submit" onclick="return joinCheck()">
