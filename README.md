@@ -24,6 +24,8 @@
 - 4. id중복체크기능 추가!
 - 5. Logging Framework (log4j)
 
+- * 방명록기능! (DB의 정보를 View에)
+- * 답변형 게시판구현!
 - * 로그수집 
 - * Tomcat/etc 모니터링
 
