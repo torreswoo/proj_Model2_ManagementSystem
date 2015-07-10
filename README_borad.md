@@ -12,4 +12,4 @@
 - Factory : command패턴으로 작업을처리할 명령처리클래스 ActionFactory, Actions...
 
 # 동작방식
-(https://googledrive.com/host/0B0CgSzgDruziekF0aXAtVUFsMlE)
+![동작방식](https://googledrive.com/host/0B0CgSzgDruziekF0aXAtVUFsMlE)
