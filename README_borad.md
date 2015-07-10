@@ -10,3 +10,6 @@
 # tech
 - Command패턴
 - Factory : command패턴으로 작업을처리할 명령처리클래스 ActionFactory, Actions...
+
+# 동작방식
+(https://drive.google.com/file/d/0B0CgSzgDruziaWltanlJMTU3WjQ/edit)
